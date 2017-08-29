@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :users
 
   get '/login' => 'session#new'
