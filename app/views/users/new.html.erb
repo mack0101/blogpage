@@ -12,21 +12,21 @@
 
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name, :required => true %>
+    <%= f.text_field :name, :required => true, :class => 'form-control' %><br>
     <%= f.label :email %>
-    <%= f.email_field :email, :required => true %>
+    <%= f.email_field :email, :required => true, :class => 'form-control' %>
   </p>
 
   <p>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :class => 'form-control' %>
   </p>
 
   <p>
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => 'form-control' %>
   </p>
 
-  <%= f.submit "Sign up!!" %>
+  <%= f.submit "Sign up!!", :class => 'btn btn-primary' %>
 
 <% end %>
