@@ -1,0 +1,11 @@
+<h1>Blog Posts</h1>
+
+<% if @current_user.present? %>
+  <p>welcome <%= @current_user.name %></p>
+<% end %>
+
+<% @posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <p><%= post.body %></p>
+  <%= link_to "Read more", post_path(post) %>
+<% end %>

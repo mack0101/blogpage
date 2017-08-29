@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blogpage</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+      <%= link_to "Home", home_path %>
+      |
+      <% if @current_user.present? %>
+          <%= link_to "Create Post", new_post_path %>
+        <% else %>
+          <%= link_to "Create Post", login_path %>
+      <% end %>
+      |
+      <% if @current_user.present? %>
+        <%= link_to "Edit profile", edit_user_path(@current_user) %>
+        <%= link_to "Sign out #{ @current_user.name }", login_path, :method => 'delete' %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_path %>
+        |
+        <%= link_to 'Sign in', login_path %>
+      <% end %>
+      |
+      <%= link_to "About", about_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
