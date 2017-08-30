@@ -7,6 +7,6 @@
 <% @posts.each do |post| %>
   <h3><%= post.title %></h3>
   <h6>Post by: <%= post.user.name %></h6>
-  <p><%= post.body %></p>
+  <p><%= truncate(post.body, length: 200) %></p>
   <%= link_to "Read more", post_path(post) %>
 <% end %>
