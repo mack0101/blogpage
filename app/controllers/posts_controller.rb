@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if(@post.save)
+      @current_user.posts << @post
       redirect_to @post
     else
       render 'new'
@@ -37,6 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find params[:id]
+    return redirect_to posts_path unless @post.user_id == @current_user.id
     @post.destroy
     redirect_to posts_path
   end
