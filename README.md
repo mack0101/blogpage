@@ -1,9 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple and basic mobile friendly web application where you can share your thoughts with the world.
+Built for educational purposes only.
 
-Things you may want to cover:
+To view the page visit the link below:
+https://mk123blog.herokuapp.com/
 
 * Ruby version
 
