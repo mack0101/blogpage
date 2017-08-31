@@ -1,6 +1,6 @@
 body {
   background-image: url(/assets/img001.jpg);
-  background-size: cover;
+  background-size:auto;
   background-color: rgb(60, 61, 62);
 }
 
