@@ -3,10 +3,12 @@
 <% if @current_user.present? %>
   <h4>Welcome <%= @current_user.name %></h4>
 <% end %>
-
-<% @posts.each do |post| %>
-  <h3><%= post.title %></h3>
-  <h6>Post by: <%= post.user.name %></h6>
-  <p><%= truncate(post.body, length: 200) %></p>
-  <%= link_to "Read more", post_path(post) %>
-<% end %>
+<div class="blog">
+  <% @posts.each do |post| %>
+    <h3><%= post.title %></h3>
+    <h6>Post by: <%= post.user.name %></h6>
+    <p><%= truncate(post.body, length: 200) %></p>
+    <%= link_to "Read more", post_path(post) %>
+    <hr>
+  <% end %>
+</div>

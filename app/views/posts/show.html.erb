@@ -1,13 +1,15 @@
-<h2><%= @post.title %></h2>
+<div class="blog">
+  <h2><%= @post.title %></h2>
 
-<p><%= @post.body %></p>
-<h6>Author: <%= @post.user.name %></h6>
+  <p><%= @post.body %></p>
+  <h6>Author: <%= @post.user.name %></h6>
 
-<% if @current_user.present? && @post.user_id == @current_user.id %>
-  <%= link_to "Edit", edit_post_path(@post) %>
-  <%= link_to "Delete", @post, :method => :delete, :data => {:confirm => 'Are you sure?'} %>
-<% end %>
+  <% if @current_user.present? && @post.user_id == @current_user.id %>
+    <%= link_to "Edit", edit_post_path(@post) %>
+    <%= link_to "Delete", @post, :method => :delete, :data => {:confirm => 'Are you sure?'} %>
+  <% end %>
 
 
-<%= render 'comments/comments' %>
-<%= render 'comments/form' %>
+  <%= render 'comments/comments' %>
+  <%= render 'comments/form' %>
+</div>
